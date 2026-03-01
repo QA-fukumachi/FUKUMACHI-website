@@ -147,4 +147,41 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
     });
+
+    // --- Release Dropdowns Logic ---
+    const releaseGroups = document.querySelectorAll('.release-group');
+    releaseGroups.forEach(group => {
+        const btn = group.querySelector('.release-dropdown-btn');
+        const content = group.querySelector('.release-dropdown-content');
+        const icon = group.querySelector('.dropdown-icon');
+        
+        // initial setup
+        gsap.set(content, { height: 0, opacity: 0, overflow: "hidden" });
+        
+        btn.addEventListener('click', () => {
+            const isActive = group.classList.contains('active');
+            
+            if (isActive) {
+                group.classList.remove('active');
+                icon.textContent = '+';
+                gsap.to(content, { 
+                    height: 0, 
+                    opacity: 0, 
+                    duration: 0.4, 
+                    ease: "power2.inOut", 
+                    onComplete: () => ScrollTrigger.refresh() 
+                });
+            } else {
+                group.classList.add('active');
+                icon.textContent = '−'; // minus symbol
+                gsap.to(content, { 
+                    height: "auto", 
+                    opacity: 1, 
+                    duration: 0.5, 
+                    ease: "power2.inOut", 
+                    onComplete: () => ScrollTrigger.refresh() 
+                });
+            }
+        });
+    });
 });

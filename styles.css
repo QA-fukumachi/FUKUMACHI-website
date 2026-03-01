@@ -405,22 +405,55 @@ body {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Arrange SoundCloud tracks side-by-side */
-.soundcloud-embeds {
+/* Release Dropdowns */
+.release-group {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.release-dropdown-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    padding: 1.5rem 0;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.release-dropdown-btn h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.release-dropdown-btn .dropdown-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.release-dropdown-btn:hover {
+    color: var(--accent);
+}
+
+/* Arranging inner embeds side-by-side */
+.release-dropdown-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.soundcloud-embeds .embed-wrapper {
+.release-dropdown-content .embed-wrapper {
     width: calc(50% - 1rem);
-    /* Side by side with a 2rem total gap (1rem per side) */
-}
-
-/* Break headings properly in flex context */
-.soundcloud-embeds h3 {
-    flex-basis: 100%;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .light-section .embed-container h3 {
@@ -515,11 +548,11 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .soundcloud-embeds {
+    .release-dropdown-content {
         display: block;
     }
 
-    .soundcloud-embeds .embed-wrapper {
+    .release-dropdown-content .embed-wrapper {
         width: 100%;
         margin-right: 0;
         margin-bottom: 2rem;
