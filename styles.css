@@ -599,6 +599,10 @@ body {
         font-size: 4rem;
     }
 
+    .scroll-indicator {
+        left: 1.5rem;
+    }
+
     .content-section {
         padding: 4rem 1.5rem;
     }
